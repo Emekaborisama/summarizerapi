@@ -14,6 +14,10 @@ db = client.get_database('summa_db')
 
 record = db.summa_collection
 
+@app.route('/')
+def home():
+  return("summarizer api")
+
 
 @app.route('/summary/<string:ref_id>', methods = ['GET', 'POST'])
 def get_summary(ref_id):
