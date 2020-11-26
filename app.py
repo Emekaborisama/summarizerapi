@@ -37,10 +37,9 @@ def summarize():
 
 @app.route('/summa/', methods = ['GET', 'POST'])
 def get_summa():
-  request_d = request.get_json()
-  doc = request_d['idd']
-  find_tweets = record.find_one({"idd":int(doc)})
-  return find_tweets['Summary']
+  ref_id = request.args.get("ref_id")
+  find_tweets = record.find_one({"idd":int(ref_id)})
+  return jsonify(Summary = find_tweets['Summary'])
 
 
 if __name__ == '__main__':
