@@ -1,0 +1,6 @@
+dnspython
+pymongo[tls,srv]
+flask
+pymongo
+tzlocal==2.1
+tweepy
