@@ -22,7 +22,7 @@ def home():
 @app.route('/summary/<string:ref_id>', methods = ['GET', 'POST'])
 def get_summary(ref_id):
   request_data = request.get_json()
-  find_tweet = record.find_one({'idd':ref_id})
+  find_tweet = record.find_one({'idd':int(ref_id)})
   return render_template("index.html", value = find_tweet['summary'])
 
 
@@ -35,13 +35,13 @@ def summarize():
     
 """
 
-@app.route('/summa/ref_id', methods = ['GET', 'POST'])
+@app.route('/summa/', methods = ['GET', 'POST'])
 def get_summa():
   request_d = request.get_json()
   doc = request_d['idd']
-  find_tweets = record.find_one({"idd":doc})
-  return find_tweets['summary']
+  find_tweets = record.find_one({"idd":int(doc)})
+  return find_tweets['Summary']
 
 
 if __name__ == '__main__':
-    app.run(host= '0.0.0.0', port = 8000, debug=True)
+    app.run(host= '0.0.0.0', debug=True)
