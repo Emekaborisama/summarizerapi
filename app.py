@@ -1,7 +1,8 @@
 #import torch
 #from transformers import *
 #from summarizer import Summarizer, TransformerSummarizer
-from flask import Flask,jsonify,request,render_template, make_response
+from flask import Flask, request, jsonify, Response, render_template
+from flask import render_template, url_for, redirect, flash
 #GPT2_model = TransformerSummarizer(transformer_type="GPT2", transformer_model_key="gpt2-medium")
 
 app = Flask(__name__)
@@ -14,7 +15,7 @@ db = client.get_database('summa_db')
 
 record = db.summa_collection
 
-@app.route('/')
+@app.route("/")
 def home():
   return("summarizer api")
 
