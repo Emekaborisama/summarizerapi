@@ -3,4 +3,4 @@ pymongo[tls,srv]
 flask
 pymongo
 tzlocal==2.1
-
+gunicorn==19.9.0
