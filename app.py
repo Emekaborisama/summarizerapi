@@ -1,8 +1,5 @@
-#import torch
-#from transformers import *
-#from summarizer import Summarizer, TransformerSummarizer
 from flask import Flask,jsonify,request,render_template, make_response
-#GPT2_model = TransformerSummarizer(transformer_type="GPT2", transformer_model_key="gpt2-medium")
+
 
 app = Flask(__name__)
 
@@ -24,14 +21,6 @@ def get_summary(ref_id):
   request_data = request.get_json()
   find_tweet = record.find_one({'idd':int(ref_id)})
   return render_template("index.html", value = find_tweet['summary'])
-
-
-@app.route('/summarizer', methods= ['GET', 'POST'])
-def summarize():
-  request_tweet = requests.get_json()
-  ree = request_tweet['text']
-  full = ''.join(GPT2_model(ree, min_length=50))
-  return jsonify(text=full)
 
 
 @app.route('/summa/', methods = ['GET', 'POST'])
