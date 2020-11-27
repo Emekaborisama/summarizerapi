@@ -26,14 +26,13 @@ def get_summary(ref_id):
   return render_template("index.html", value = find_tweet['summary'])
 
 
-"""@app.route('/summarizer', methods= ['GET', 'POST'])
+@app.route('/summarizer', methods= ['GET', 'POST'])
 def summarize():
   request_tweet = requests.get_json()
   ree = request_tweet['text']
   full = ''.join(GPT2_model(ree, min_length=50))
-  return full
-    
-"""
+  return jsonify(text=full)
+
 
 @app.route('/summa/', methods = ['GET', 'POST'])
 def get_summa():
