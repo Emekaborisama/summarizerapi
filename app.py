@@ -27,8 +27,18 @@ def get_summary(ref_id):
 def get_summa():
   ref_id = request.args.get("ref_id")
   find_tweets = record.find_one({"idd":int(ref_id)})
-  return jsonify(Summary = find_tweets['Summary'])
+  summary = jsonify(data = find_tweets['Summary'])
+  response = make_response(render_template("index.html", value = summary))
+  return response
 
+"""
+
+@app.route('/summa/', methods = ['GET', 'POST'])
+def get_summa():
+  ref_id = request.args.get("ref_id")
+  find_tweets = record.find_one({"idd":int(ref_id)})
+  return jsonify(Summary = find_tweets['Summary'])
+"""
 
 if __name__ == '__main__':
     app.run(host= '0.0.0.0', debug=True)
