@@ -16,19 +16,13 @@ def home():
   return("welcome to summa api")
 
 
-@app.route('/summary/<string:ref_id>', methods = ['GET', 'POST'])
-def get_summary(ref_id):
-  request_data = request.get_json()
-  find_tweet = record.find_one({'idd':int(ref_id)})
-  return render_template("index.html", value = find_tweet['summary'])
-
 
 @app.route('/summa/', methods = ['GET', 'POST'])
 def get_summa():
   ref_id = request.args.get("ref_id")
   find_tweets = record.find_one({"idd":int(ref_id)})
-  summary = jsonify(data = find_tweets['Summary'])
-  response = make_response(render_template("index.html", value = summary))
+  #summary = jsonify(data = find_tweets['Summary'])
+  response = make_response(render_template("index.html", value = find_tweets['Summary']))
   return response
 
 """
