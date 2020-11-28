@@ -6,8 +6,8 @@ app = Flask(__name__)
 import pymongo
 import dns
 
-client = pymongo.MongoClient("mongodb+srv://emekaboria:jmapLBIwaO5Xrnow@cluster0.g6tlp.mongodb.net/summa_db?retryWrites=true&w=majority")
-db = client.get_database('summa_db')
+client = pymongo.MongoClient("mongodb+srv://emekaboria:jmapLBIwaO5Xrnow@cluster0.g6tlp.mongodb.net/tweetid?retryWrites=true&w=majority")
+db = client.get_database('tweetid')
 
 record = db.summa_collection
 
