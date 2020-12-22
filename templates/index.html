@@ -1,52 +1,134 @@
-<!DOCTYPE html>
 <html>
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Home - tweetthread</title> 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ==" crossorigin="anonymous" />
-</head>
-<body>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>SummarizerThread</title>
+        <meta charset="utf-8">
+        <meta name="author" content="AnikeSadia">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1,user-scalable=no">
+        <style>
+
+        body{
+            background-color: white;
+            font-family: Calibri;
+            height: 90vh;
+            width: auto;
+
+            }
+        #content{
+            position:absolute;
+            height:500px;
+            width: 70%;
+            top: 50%;
+            right: 50%;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 50px;
+            transform: translate(50%,-50%);
+ 
+        }
+
+        h1{
+            text-align: center;
+            margin-bottom: 25px;
+            margin-top: 15px;
+            color: #1DA1F2;
+            font-size: 50px;
+            
+        }
+        a{
+            color: #1DA1F2;
+            text-decoration: none;
+        }
+        #p1{
+            color:  #333131;
+            line-height: 1.1em;
+            text-align: center;
+            font-size: 19px;
+
+        }
+        #Footer{
+            background-color: white;
+            height: 50px;
+            width: 100%;
+        }
+        #p2{
+            color: #333131;
+            line-height: 1.1em;
+            text-align: center;
+            font-size: 19px;
+        }
+       h2{
+           text-align: center;
+           color: #1DA1F2;
+           margin-bottom: 30px;
+           font-size: 35px;
+           animation: text-bouncing 2s ease-in-out infinite;
+       }
+        #Summary_box{
+            height: auto;
+            margin: auto;
+            padding: 15px;
+            width: 70%;
+            text-align: center;
+            font-size: 17px;
+            border: 1px #1DA1F2 solid;
+            border-radius: 25px;
+            margin-bottom: 70px;
+            color:  #333131;
+            background-color:transparent;
+            
+
+        }
+        @keyframes text-bouncing {
+         0%{
+             transform: translateY(0px);
+         }
+         25%{
+             transform: translateY(5px);
+
+         }
+         75%{
+             transform: translateY(10px);
+         }
+         100%{
+             transform: translateY(0px);
+         }
+
+        }
+
+
+        </style>
     
-      <div class="ui inverted menu">
-        <a class="active item">
-          Home
-        </a>
-        <a class="item" src= "https://twitter.com/Summarizethread">
-          Follow us on Twitter
-        </a>
-        <a class="item">
-          Help
-        </a>
-      </div>
-      <img class="ui fluid image" src="https://res.cloudinary.com/blackchef/image/upload/v1606602718/OTB_Company_Blue.png.img.fullhd.medium_ooqfdm.png" style="margin-top: -17px;">
+    
+    </head>
+    <body>
+    
+    <div id='content'>
+    
+    <h1>Summarize Your Prolonged Twitter Threads </h1>
+    
+    <p id="p1">Mention <a href="https://twitter.com/Summarizethread"> @Summarizethread </a>to the last tweet of the thread you want to summarize</p>
+    <p id="p2"><a href="https://twitter.com/Summarizethread"> Follow Us  </a>to enjoy this experience</p>
 
-    <div class="ui raised very padded text container segment">
-        <a href="https://twitter.com/SummarizeThread">
-        <button class="ui active button">
-            <i class="user icon" src="https://twitter.com/Summarizethread"></i>
-            Follow me
-          </button>
-        </a>
-        <h2 class="ui header aligned center">Your Summary</h2>
-        <p>{{ value }}</p>
-      </div>
-      <div class="ui inverted segment">
-        
-        <div class="ui inverted divider"></div>
-        <p></p>
-        <h4 class="ui horizontal inverted divider">
-            <p>This is not a twitter product</p>
-            <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="emekaboris" data-color="#FFDD00" data-emoji=""  data-font="Cookie" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff" ></script>
-        </h4>
-      </div>
+    <h2><i>Your Summary </i></h2>
+    <div id="summary_box">
+ 
+
+    {{ value }}
+    </div>
+
+
+    
+    <div id="Footer">
+            </div>
+
+</div>
 
 
 
+        </body>
 
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js" integrity="sha512-dqw6X88iGgZlTsONxZK9ePmJEFrmHwpuMrsUChjAw1mRUhUITE5QU9pkcSox+ynfLhL15Sv2al5A0LVyDCmtUw==" crossorigin="anonymous"></script>
-</body>
-
-</html>
+        </html>
