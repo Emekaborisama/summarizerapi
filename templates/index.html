@@ -9,23 +9,27 @@
         <meta name="author" content="AnikeSadia">
         <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1,user-scalable=no">
         <style>
+        *{
+                font-family: Cambria;
 
+            }
         body{
-            background-color: white;
-            font-family: Calibri;
+            background-color: #f8f9f9;
             height: 90vh;
             width: auto;
 
             }
         #content{
             position:absolute;
-            height:500px;
-            width: 70%;
+            height:600px;
+            width: 65%;
+            margin-bottom: 10px;
             top: 50%;
+            background-color:transparent;
             right: 50%;
             align-items: center;
             justify-content: center;
-            margin-bottom: 50px;
+            margin-top: 10px;
             transform: translate(50%,-50%);
  
         }
@@ -33,9 +37,9 @@
         h1{
             text-align: center;
             margin-bottom: 25px;
-            margin-top:0px;
+            margin-top: 10px;
             color: #1DA1F2;
-            font-size: 50px;
+            font-size: 60px;
             
         }
         a{
@@ -43,42 +47,54 @@
             text-decoration: none;
         }
         #p1{
-            color:  #333131;
-            line-height: 1.1em;
+            color:  #797979;
+            line-height: 1.2em;
             text-align: center;
             font-size: 19px;
+            font-weight:300px;
 
         }
-        #Footer{
-            background-color: white;
-            height: 50px;
-            width: 100%;
-        }
+
         #p2{
-            color: #333131;
+            color: #797979;
             line-height: 1.1em;
             text-align: center;
+            font-weight:300px;
             font-size: 19px;
+            margin-bottom: 30px;
+        }
+        #Footer{
+            background-color:transparent;
+            width: 98%;
+            margin: 0;
+            height: 100px;
+            margin-top: 0px;
+            position: absolute;
+        }
+        .footer-content{
+            text-align: center;
+            color: #797979;
         }
        h2{
            text-align: center;
            color: #1DA1F2;
            margin-bottom: 30px;
            font-size: 35px;
+           margin-top: 5px;
            animation: text-bouncing 2s ease-in-out infinite;
        }
         #Summary_box{
-            height: auto;
+            height: auto !important;
             margin: auto;
-            padding: 15px;
-            width: 70%;
+            padding: 20px;
+            width: 80%;
             text-align: center;
             font-size: 17px;
             border: 1px #1DA1F2 solid;
             border-radius: 25px;
-            margin-bottom: 70px;
+            margin-bottom: 30px;
             color:  #333131;
-            background-color:transparent;
+            background-color:white;
             
 
         }
@@ -98,14 +114,29 @@
          }
 
         }
-
+      @media (max-width: 700px){
+          h1{
+              font-size: 40px;
+          }
+          #p1{
+            font-size: 17px;
+            font-weight:250px;}
+          #p2{
+            font-size: 17px;
+            font-weight:250px;
+              margin-bottom: 8px;
+          }
+          h2{
+              font-size: 30px;
+          }
+      }
 
         </style>
     
     
     </head>
     <body>
-    
+
     <div id='content'>
     
     <h1>Summarize Your Prolonged Twitter Threads </h1>
@@ -115,14 +146,14 @@
 
     <h2><i>Your Summary </i></h2>
     <div id="summary_box">
- 
-
-    {{ value }}
-    </div>    
+         {{ value }}
+    </div>
     <div id="Footer">
+        <h4 class="footer-content">
+            <p>Copyright &copy; 2020</p>
+            <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="emekaboris" data-color="#1DA1F2" data-emoji=""  data-font="Cookie" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="ffffff" data-coffee-color="#ffffff" ></script>
+        </h4>
             </div>
-
-</div>
         </body>
 
         </html>
