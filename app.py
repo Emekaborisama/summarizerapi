@@ -5,9 +5,9 @@ app = Flask(__name__)
 
 import pymongo
 import dns
+import config as config
 
-
-client = pymongo.MongoClient("mongodb+srv://emekaboria:1kgJNTP2YpNe0CNM@cluster0.g6tlp.mongodb.net/tweetid?retryWrites=true&w=majority")
+client = pymongo.MongoClient(config.monourl)
 db = client.get_database('tweetid')
 
 record = db.summa_collection
