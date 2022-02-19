@@ -7,7 +7,7 @@ import pymongo
 import dns
 
 
-client = pymongo.MongoClient("mongodb+srv://emekaboria:1kgJNTP2YpNe0CNM@cluster0.g6tlp.mongodb.net/tweetid?retryWrites=true&w=majority)
+client = pymongo.MongoClient("mongodb+srv://emekaboria:1kgJNTP2YpNe0CNM@cluster0.g6tlp.mongodb.net/tweetid?retryWrites=true&w=majority")
 db = client.get_database('tweetid')
 
 record = db.summa_collection
