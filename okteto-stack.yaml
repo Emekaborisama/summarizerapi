@@ -1,0 +1,12 @@
+name: summarizerdbapi
+services:
+  summarizerdbapi:
+    public: true
+    image: emekaboris/summarizerdbapi:latest
+    build: .
+    replicas: 1
+    ports:
+      - 8080
+    resources:
+      cpu: 2000m
+      memory: 3Gi
