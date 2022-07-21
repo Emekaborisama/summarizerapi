@@ -6,15 +6,26 @@ name: CI
 on:
   pull_request:
     branches: [ "main" ]
+    types:
+        - labeled
+        - unlabeled
+        - synchronize
+        - opened
+        - edited
+        - ready_for_review
+        - reopened
+        - unlocked
+    
 
 
 
 jobs:
-
+  
+  
   build:
 
     runs-on: ubuntu-latest
-
+  
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -36,10 +47,14 @@ jobs:
             aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
             aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
             aws-region: us-east-2
-            
-            
-      - name: Run CodeBuild
-        uses: aws-actions/aws-codebuild-run-build@v1
-        with:
-          project-name: test_sample
+        
+  automerge:
+      runs-on: ubuntu-latest
+      steps:
+        - id: automerge
+          name: automerge
+          uses: "pascalgn/automerge-action@v0.15.3"
+          env:
+            GITHUB_TOKEN: "${{ secrets.G_TOKEN }}"  
+
 
