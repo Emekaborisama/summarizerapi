@@ -17,6 +17,23 @@ on:
         - unlocked
     
 
+    types:
+      - labeled
+      - unlabeled
+      - synchronize
+      - opened
+      - edited
+      - ready_for_review
+      - reopened
+      - unlocked
+  pull_request_review:
+    types:
+      - submitted
+  check_suite:
+    types:
+      - completed
+  status: {}
+
 
 
 jobs:
@@ -47,14 +64,16 @@ jobs:
             aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
             aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
             aws-region: us-east-2
-        
+
+            
   automerge:
-      runs-on: ubuntu-latest
-      steps:
-        - id: automerge
-          name: automerge
-          uses: "pascalgn/automerge-action@v0.15.3"
-          env:
-            GITHUB_TOKEN: "${{ secrets.G_TOKEN }}"  
+    runs-on: ubuntu-latest
+    steps:
+      - id: automerge
+        name: automerge
+        uses: "pascalgn/automerge-action@v0.15.3"
+        env:
+          GITHUB_TOKEN: "${{ secrets.G_TOKEN }}"  
+
 
 
