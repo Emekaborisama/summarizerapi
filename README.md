@@ -1,4 +1,4 @@
-# summarizerapi
+# summarizer backend api to query data from a mongodb database and return a webpage url of the summarize result
 
 
 
